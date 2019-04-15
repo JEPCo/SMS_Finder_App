@@ -21,6 +21,7 @@
         android:textAlignment="center"
         android:drawableRight="@drawable/pasword"
         android:padding="15dp"
+        android:background="@drawable/edx_bg"
         android:inputType="textPassword" />
 
     <EditText
@@ -34,6 +35,7 @@
         android:layout_margin="10dp"
         android:textAlignment="center"
         android:drawableRight="@drawable/pasword"
+        android:background="@drawable/edx_bg"
         android:padding="15dp"
         android:inputType="textPassword" />
 
