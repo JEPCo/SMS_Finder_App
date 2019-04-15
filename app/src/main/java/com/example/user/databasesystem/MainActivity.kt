@@ -6,6 +6,7 @@ import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.view.Menu
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -27,5 +28,11 @@ class MainActivity : AppCompatActivity() {
             else
                 Toast.makeText(this, "Sorry you can't use this app", Toast.LENGTH_LONG).show()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+
     }
 }

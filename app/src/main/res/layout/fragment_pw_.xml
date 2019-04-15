@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#404040"
+    android:padding="10dp"
+    tools:context=".PW_Fragment">
+
+
+    <EditText
+        android:id="@+id/pwd_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:drawableRight="@drawable/pasword"
+        android:padding="15dp"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/pwd_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirm"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:drawableRight="@drawable/pasword"
+        android:padding="15dp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/pwd_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Save" />
+</LinearLayout>
