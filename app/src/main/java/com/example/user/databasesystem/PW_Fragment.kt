@@ -33,12 +33,12 @@ class PW_Fragment : Fragment() {
             else {
                 if (v.pwd_password.text.toString() != v.pwd_confirm.text.toString())
                     Toast.makeText(activity, "PW is not match", Toast.LENGTH_LONG).show()
-                else
-                {
+                else {
                     var sp = activity!!.getSharedPreferences("my_settings", Context.MODE_PRIVATE)
                     var edi = sp.edit()
                     edi.putString("pwd", v.pwd_password.text.toString())
                     edi.commit()
+                    Toast.makeText(activity, "Saved!!", Toast.LENGTH_LONG).show()
                 }
             }
         }
