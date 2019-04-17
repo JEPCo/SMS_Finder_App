@@ -8,8 +8,8 @@
         android:title="Password"
         app:showAsAction="always" />
     <item
-        android:id="@+id/item_settings"
+        android:id="@+id/item_report"
         android:icon="@drawable/a2"
-        android:title="Settings"
+        android:title="Report"
         app:showAsAction="always" />
 </menu>
