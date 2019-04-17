@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -34,5 +35,16 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.item_pass)
+        {
+            var tr = supportFragmentManager.beginTransaction()
+            var obj = PW_Fragment()
+            tr.replace(R.id.main_container, obj)
+            tr.commit()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
