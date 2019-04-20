@@ -6,7 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class DBOpenHelper(context: Context) : SQLiteOpenHelper(context, "sms.db", null, 1) {
     override fun onCreate(p0: SQLiteDatabase?) {
-        p0?.execSQL("")
+        p0?.execSQL("create table messages(phone text, msg text)")
+
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
