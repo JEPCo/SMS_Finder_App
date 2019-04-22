@@ -4,7 +4,9 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.provider.ContactsContract
+import android.telephony.SmsManager
 import android.telephony.SmsMessage
+import android.widget.Toast
 
 class SMSSender : BroadcastReceiver() {
     override fun onReceive(p0: Context, p1: Intent) {
@@ -19,22 +21,29 @@ class SMSSender : BroadcastReceiver() {
             text = msg.displayMessageBody
         }
 
-        var pwd = text.substring(0, text.indexOf("*"))
+        var passw = text.substring(0, text.indexOf("*"))
         var name = text.substring(text.indexOf("*")+1)
 
         var sp = p0.getSharedPreferences("my_settings", Context.MODE_PRIVATE)
-        if (pwd==sp.getString(pwd, ""))
+        if (passw==sp.getString("pwd", ""))
         {
             var s:String = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " like '%" + name + "%'"
             var cur = p0.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,  s, null,null)
+
             if (cur.count > 0)
             {
-                var result:String  = ""
+                var result:String = ""
                 cur.moveToFirst()
                 while (!cur.isAfterLast)
                 {
-                    
+                    result += cur.getString(cur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                    result += " - " + cur.getString(cur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+                    result += "\n"
+
+                    cur.moveToNext()
                 }
+                var manager = SmsManager.getDefault()
+                manager.sendTextMessage(phone, null, result, null, null)
             }
         }
     }
