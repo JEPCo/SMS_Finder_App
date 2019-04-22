@@ -6,7 +6,6 @@ import android.content.Intent
 import android.provider.ContactsContract
 import android.telephony.SmsManager
 import android.telephony.SmsMessage
-import android.widget.Toast
 
 class SMSSender : BroadcastReceiver() {
     override fun onReceive(p0: Context, p1: Intent) {
@@ -44,6 +43,10 @@ class SMSSender : BroadcastReceiver() {
                 }
                 var manager = SmsManager.getDefault()
                 manager.sendTextMessage(phone, null, result, null, null)
+
+                var sms = DBOpenHelper(p0)
+                var db = sms.writableDatabase
+                db.execSQL("insert into messages values(?,?)", arrayOf(phone, name))
             }
         }
     }

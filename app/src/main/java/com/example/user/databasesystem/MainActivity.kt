@@ -45,6 +45,15 @@ class MainActivity : AppCompatActivity() {
             tr.replace(R.id.main_container, obj)
             tr.commit()
         }
+
+        if (item?.itemId == R.id.item_report)
+        {
+            var tr = supportFragmentManager.beginTransaction()
+            var obj = SMSDBFragment()
+            tr.replace(R.id.main_container, obj)
+            tr.commit()
+        }
+
         return super.onOptionsItemSelected(item)
     }
 }
