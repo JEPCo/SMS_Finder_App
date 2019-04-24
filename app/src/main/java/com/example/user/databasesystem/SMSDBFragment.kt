@@ -22,12 +22,24 @@ class SMSDBFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        var inf =  inflater.inflate(R.layout.fragment_smsdb, container, false)
+        var v =  inflater.inflate(R.layout.fragment_smsdb, container, false)
+        var obj = DBOpenHelper(context)
+        var db = obj.readableDatabase
+        var cur = db.rawQuery("select * from messages", null)
+        if (cur.count >0)
+        {
+            var list = ArrayList<String>()
+            cur.moveToFirst()
+            while (!cur.isAfterLast)
+                
+
+
+        }
 
 
 
 
-        return inf
+        return v
     }
 
 
