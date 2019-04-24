@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.fragment_smsdb.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -31,9 +33,13 @@ class SMSDBFragment : Fragment() {
             var list = ArrayList<String>()
             cur.moveToFirst()
             while (!cur.isAfterLast)
-                
+            {
+                list.add(cur.getString(0) + "\n" + cur.getString(1))
+                cur.moveToNext()
+            }
 
-
+            var adp = ArrayAdapter(activity, R.layout.list_layout, list)
+            v.lv.adapter = adp
         }
 
 

@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
 
         if (Build.VERSION.SDK_INT>22)
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECEIVE_SMS, Manifest.permission.SEND_SMS, Manifest.permission.READ_CONTACTS), 95)
+
+        var tr = supportFragmentManager.beginTransaction()
+        var obj = SMSDBFragment()
+        tr.replace(R.id.main_container, obj)
+        tr.commit()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -34,7 +39,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
