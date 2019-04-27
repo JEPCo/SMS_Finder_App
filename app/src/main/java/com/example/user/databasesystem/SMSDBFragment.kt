@@ -48,7 +48,12 @@ class SMSDBFragment : Fragment() {
                 DBOpenHelper.msg = list[i]
                 var obj = PopUpFragment()
                 obj.show(activity.supportFragmentManager, "Test")
+            }
 
+            v.lv.setOnItemLongClickListener { adapterView, view, i, l ->
+                list.removeAt(i)
+                adp.notifyDataSetChanged()
+                false
             }
         }
 

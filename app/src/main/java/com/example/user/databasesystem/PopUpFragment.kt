@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_pop_up.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,7 +25,10 @@ class PopUpFragment : DialogFragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_pop_up, container, false)
-        
+        v.msg_tv.text = DBOpenHelper.msg
+        v.msg_btn.setOnClickListener {
+            dismiss()
+        }
 
 
         return  v
