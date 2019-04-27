@@ -12,4 +12,8 @@ class DBOpenHelper(context: Context) : SQLiteOpenHelper(context, "sms.db", null,
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
     }
+
+    companion object {
+        var msg: String =""
+    }
 }

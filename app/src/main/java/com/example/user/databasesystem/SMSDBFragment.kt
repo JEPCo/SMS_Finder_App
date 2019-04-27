@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ListAdapter
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_smsdb.view.*
 
 
@@ -40,6 +42,14 @@ class SMSDBFragment : Fragment() {
 
             var adp = ArrayAdapter(activity, R.layout.list_layout, list)
             v.lv.adapter = adp
+            
+            v.lv.setOnItemClickListener { adapterView, view, i, l ->
+
+                DBOpenHelper.msg = list[i]
+                var obj = PopUpFragment()
+                obj.show(activity.supportFragmentManager, "Test")
+
+            }
         }
 
 
