@@ -2,6 +2,7 @@ package com.example.user.databasesystem
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.support.v4.app.ActivityCompat
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,14 @@ class MainActivity : AppCompatActivity() {
         var obj = SMSDBFragment()
         tr.replace(R.id.main_container, obj)
         tr.commit()
+
+        if (DBOpenHelper.test==1)
+        {
+            var tr = supportFragmentManager.beginTransaction()
+            var obj = PW_Fragment()
+            tr.replace(R.id.main_container, obj)
+            tr.commit()
+        }
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

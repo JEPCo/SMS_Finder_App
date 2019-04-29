@@ -15,5 +15,6 @@ class DBOpenHelper(context: Context) : SQLiteOpenHelper(context, "sms.db", null,
 
     companion object {
         var msg: String =""
+        var test: Int = 0
     }
 }

@@ -2,6 +2,7 @@ package com.example.user.databasesystem
 
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_pw.*
 import kotlinx.android.synthetic.main.fragment_pw.view.*
 import java.util.*
 
@@ -53,6 +53,9 @@ class PW_Fragment : Fragment() {
             conf.locale = loc
 
             activity.resources.updateConfiguration(conf, activity.resources.displayMetrics)
+            DBOpenHelper.test = 1
+            var i = Intent(activity, MainActivity::class.java)
+            startActivity(i)
         }
 
         v.rdo_en.setOnClickListener {
@@ -63,6 +66,9 @@ class PW_Fragment : Fragment() {
             conf.locale = loc
 
             activity.resources.updateConfiguration(conf, activity.resources.displayMetrics)
+            DBOpenHelper.test = 1
+            var i = Intent(activity, MainActivity::class.java)
+            startActivity(i)
         }
         return v
     }
