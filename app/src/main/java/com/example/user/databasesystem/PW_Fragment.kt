@@ -2,6 +2,7 @@ package com.example.user.databasesystem
 
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_pw.*
 import kotlinx.android.synthetic.main.fragment_pw.view.*
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -41,6 +43,26 @@ class PW_Fragment : Fragment() {
                     Toast.makeText(activity, "Saved!!", Toast.LENGTH_LONG).show()
                 }
             }
+        }
+
+        v.rdo_ar.setOnClickListener {
+            var loc = Locale("ar")
+            Locale.setDefault(loc)
+
+            var conf = Configuration()
+            conf.locale = loc
+
+            activity.resources.updateConfiguration(conf, activity.resources.displayMetrics)
+        }
+
+        v.rdo_en.setOnClickListener {
+            var loc = Locale("en")
+            Locale.setDefault(loc)
+
+            var conf = Configuration()
+            conf.locale = loc
+
+            activity.resources.updateConfiguration(conf, activity.resources.displayMetrics)
         }
         return v
     }

@@ -39,10 +39,32 @@
         android:padding="15dp"
         android:inputType="textPassword" />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdo_ar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:text="Arabic" />
+
+        <RadioButton
+            android:id="@+id/rdo_en"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:text="English" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/pwd_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/save_btn" />
+
 </LinearLayout>
