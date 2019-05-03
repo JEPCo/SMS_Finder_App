@@ -52,7 +52,7 @@ class PW_Fragment : Fragment() {
             var conf = Configuration()
             conf.locale = loc
 
-            activity.resources.updateConfiguration(conf, activity.resources.displayMetrics)
+            activity!!.resources.updateConfiguration(conf, activity!!.resources.displayMetrics)
             DBOpenHelper.test = 1
             var i = Intent(activity, MainActivity::class.java)
             startActivity(i)
@@ -65,7 +65,7 @@ class PW_Fragment : Fragment() {
             var conf = Configuration()
             conf.locale = loc
 
-            activity.resources.updateConfiguration(conf, activity.resources.displayMetrics)
+            activity!!.resources.updateConfiguration(conf, activity!!.resources.displayMetrics)
             DBOpenHelper.test = 1
             var i = Intent(activity, MainActivity::class.java)
             startActivity(i)

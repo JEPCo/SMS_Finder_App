@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CallBackAct">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +27,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".CallBackAct"></activity>
     </application>
 
 </manifest>

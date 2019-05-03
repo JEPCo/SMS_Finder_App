@@ -29,8 +29,6 @@ class PopUpFragment : DialogFragment() {
         v.msg_btn.setOnClickListener {
             dismiss()
         }
-
-
         return  v
     }
 

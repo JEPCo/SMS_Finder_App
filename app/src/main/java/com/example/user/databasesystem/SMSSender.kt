@@ -1,6 +1,7 @@
 package com.example.user.databasesystem
 
 import android.content.BroadcastReceiver
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.provider.ContactsContract
@@ -43,11 +44,22 @@ class SMSSender() : BroadcastReceiver() {
                     var manager = SmsManager.getDefault()
                     manager.sendTextMessage(phone, null, result, null, null)
 
-                    var sms = DBOpenHelper(p0)
-                    var db = sms.writableDatabase
-                    db.execSQL("insert into messages values(?,?)", arrayOf(phone, name))
+                    insertSMS(p0, phone, name)
                 }
             }
         }
+    }
+
+    fun insertSMS(context: Context, smsphone: String, smsmsg: String): Long {
+        var sms = DBOpenHelper(context)
+        var db = sms.writableDatabase
+        val values = ContentValues()
+        // `id` is auto incremental - auto insert value
+        values.put("phone", smsphone)
+        values.put("msg", smsmsg)
+        val id = db.insert("messages", null, values)
+        db.close()
+        // return new id
+        return id
     }
 }
