@@ -35,7 +35,7 @@ class SMSDBFragment : Fragment() {
             var listTest = ArrayList<SMSItem>()
             cur.moveToFirst()
             while (!cur.isAfterLast) {
-                list.add(cur.getString(0) + "\n" + cur.getString(1) + "\n" + cur.getString(2))
+                list.add(cur.getString(1) + "\n" + cur.getString(2))
                 listTest.addAll(obj!!.SMSList)
                 cur.moveToNext()
             }
@@ -72,7 +72,7 @@ class SMSDBFragment : Fragment() {
                 val dialog: AlertDialog = builder.create()
                 dialog.show()
 
-                false
+                true
             }
         }
         return v
